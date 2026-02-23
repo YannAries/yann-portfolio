@@ -1,0 +1,36 @@
+# Hugo build output
+/public/
+/resources/
+.hugo_build.lock
+
+# Theme (ignore original, keep customizations)
+/themes/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env*
+.env.local
+
+# Cache
+.cache/
+
+# Node (if using npm for tools)
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*

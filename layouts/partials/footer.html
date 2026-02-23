@@ -1,0 +1,62 @@
+<footer class="pb-6 pt-10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="footer-shell">
+      <!-- Removed footer-inner, using custom centered container -->
+      <div class="footer-custom-centered">
+        
+        <!-- Social Links - Centered -->
+        {{ with .Site.Params.social }}
+        <div class="footer-social-row">
+          {{ range . }}
+          <a
+            href="{{ .url }}"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ .label }}"
+          >
+            {{- if hasPrefix .icon "si " -}}
+              <i class="{{ .icon }}"></i>
+            {{- else if hasPrefix .icon "lucide-" -}}
+              {{- $iconName := strings.TrimPrefix "lucide-" .icon -}}
+              {{ partial "lucide-icon.html" (dict "name" $iconName "size" "18") }}
+            {{- end -}}
+            <span>{{ .label }}</span>
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- Divider -->
+        <div class="footer-custom-divider"></div>
+
+        <!-- Copyright -->
+        <p class="footer-small footer-custom-text">
+          &copy; {{ now.Format "2006" }} {{ .Site.Title }} &mdash; {{ i18n "all_rights_reserved" }}
+        </p>
+
+        <!-- Built With -->
+        <p class="footer-small footer-custom-text footer-built-with">
+          <span>{{ i18n "built_with" }}</span>
+          <a
+            href="https://gohugo.io/"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Hugo</a>
+          <span>/</span>
+          <a
+            href="{{ .Site.Params.themeGit }}"
+            class="footer-link footer-float link-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Minimal&nbsp;Black</a>
+        </p>
+
+        <!-- Divider -->
+        <div class="footer-custom-divider"></div>
+
+      </div>
+    </div>
+  </div>
+</footer>

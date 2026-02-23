@@ -1,0 +1,421 @@
+baseURL = 'https://minimal-black-demo.netlify.app'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+theme = "minimal-black"
+
+# Language Configuration
+[languages]
+  [languages.en]
+    contentDir = 'content/en'
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'Yannick GF'
+    weight = 1
+  
+  [languages.fr]
+    contentDir = 'content/fr'
+    languageCode = 'fr-FR'
+    languageDirection = 'ltr'
+    languageName = 'Français'
+    title = 'Yannick GF'
+    weight = 2
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
+[params]
+  brand = "Yannick GF"
+  description = "Portfolio: Demonstrating projects, technical skills, and real-world problem-solving"
+
+  # Favicon - Place your favicon files in /static/ directory
+  # Supported formats: .ico, .png, .svg
+  favicon = "icons/favicon.svg"
+  appleTouchIcon = "apple-touch-icon.png"
+
+  # Logo (optional)
+  logo = "images/logo.png"
+
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#0891b2"
+    backgroundColor = "#000000"
+    categories = ["blog", "portfolio", "developer"]
+    name = "Yannick - Portfolio"
+    shortName = "Yann"
+
+    # Custom icon configuration (optional)
+    # If not specified, defaults to /icons/android-chrome-*.png
+     [[params.manifest.icons]]
+       src = "/icons/android-chrome-192x192.png"
+       sizes = "192x192"
+       type = "image/png"
+       purpose = "any maskable"
+
+  # Project and blog intro text
+  projectsIntro = "Selected projects to display list." # Can be empty
+  blogIntro = "" # Can be empty
+
+  # Theme Configuration
+  [params.theme]
+    defaultTheme = "dark"  # Options: "light", "dark", "system"
+
+  # Home Page Configuration
+  [params.home]
+    sections = ["hero", "now", "tech-marquee", "projects", "posts"]
+    showNowSection = true
+    showFeaturedProjects = true
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    blogTitle = "Latest Writing"
+    blogSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+    # Technology Stack Display
+    [[params.home.tech]]
+      label = "Python"
+      icon = "si si-python"
+
+    [[params.home.tech]]
+      label = "macOS"
+      icon = "si si-macos"
+
+    [[params.home.tech]]
+      label = "VSCodium"
+      icon = "si si-vscodium"
+
+    [[params.home.tech]]
+      label = "Coolify"
+      icon = "si si-coolify"
+
+    [[params.home.tech]]
+      label = "Debian"
+      icon = "si si-debian"
+
+    [[params.home.tech]]
+      label = "GitLab"
+      icon = "si si-gitlab"
+
+    [[params.home.tech]]
+      label = "Docker"
+      icon = "si si-docker"
+
+    [[params.home.techReverse]]
+      label = "PostgreSQL"
+      icon = "si si-postgresql"
+
+    [[params.home.techReverse]]
+      label = "Hetzner"
+      icon = "si si-hetzner"
+
+    [[params.home.techReverse]]
+      label = "Git"
+      icon = "si si-git"
+
+    [[params.home.techReverse]]
+      label = "Hugo"
+      icon = "si si-hugo"
+
+    [[params.home.techReverse]]
+      label = "Json"
+      icon = "si si-json"
+
+    [[params.home.techReverse]]
+      label = "Linux"
+      icon = "si si-linux"
+
+    [[params.home.techReverse]]
+      label = "Markdown"
+      icon = "si si-markdown"
+
+    [[params.home.techReverse]]
+      label = "YAML"
+      icon = "si si-yaml"
+
+    [[params.home.techReverse]]
+      label = "Jira"
+      icon = "si si-jira"
+
+  # About Page Alternative Layout Configuration - Optional
+  [params.about]
+  avatar = "images/avatar.jpg"
+  [params.about.alt]
+    # Stats displayed in the profile card sidebar
+    [[params.about.alt.stats]]
+      value = "1"
+      label = "APIs Built"
+      icon = "lucide-network"
+
+    [[params.about.alt.stats]]
+      value = "20+"
+      label = "Projects"
+
+    [[params.about.alt.stats]]
+      value = "∞"
+      label = "Hours Spent"
+
+    # Skills/Tech stack badges with icons
+    [[params.about.alt.skills]]
+      label = "JavaScript"
+      icon = "si si-javascript"
+
+    [[params.about.alt.skills]]
+      label = "Python"
+      icon = "si si-python"
+
+    [[params.about.alt.skills]]
+      label = "React"
+      icon = "si si-react"
+
+    [[params.about.alt.skills]]
+      label = "Docker"
+      icon = "si si-docker"
+
+    [[params.about.alt.skills]]
+      label = "PostgreSQL"
+      icon = "si si-postgresql"
+
+    [[params.about.alt.skills]]
+      label = "OVH"
+      icon = "si si-ovh"
+
+  # Hero Section Configuration
+  [params.hero]
+    badge = "Web Developer | Python | Data Analytics"
+    title = "Hi, I'm Yannick."
+    role = "Building web applications and turning data into insights"
+    location = "Paris Île-de-France, France"
+    available = true
+    availableLabel = "Available for work"
+
+    nowLabel = "Quick Facts"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+      "Managing the scalable process of creating, publishing and managing API",
+      "Building and managing getCoverLetterAI, an AI-powered cover letter SaaS",
+      "Documenting my projects and technical work"
+    ]
+
+    [params.hero.primary]
+      label = "View Projects"
+      href = "/projects/"
+
+    [params.hero.secondary]
+      label = "Read the Blog"
+      href = "/blog/"
+
+  # Social Links
+  [[params.social]]
+    label = "GitHub"
+    url = "https://github.com/yourusername"
+    icon = "si si-github"
+
+  [[params.social]]
+    label = "LinkedIn"
+    url = "https://www.linkedin.com/in/jimchristopoulos-542512221/"
+    icon = "lucide-network"
+
+  [[params.social]]
+    label = "Email"
+    url = "mailto:you@example.com"
+    icon = "si si-protonmail"
+
+  # Analytics Configuration
+  [params.analytics]
+    # Google Analytics (GA4)
+    # googleAnalytics = "G-XXXXXXXXXX"
+
+    # Plausible Analytics (privacy-friendly)
+    # [params.analytics.plausible]
+    #   enabled = true
+    #   domain = "yourdomain.com"
+    #   scriptUrl = "https://plausible.io/js/script.js"
+
+    # Umami Analytics (self-hosted option)
+    # [params.analytics.umami]
+    #   enabled = true
+    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
+    #   websiteId = "your-website-id"
+
+    # Fathom Analytics
+    # [params.analytics.fathom]
+    #   enabled = true
+    #   scriptUrl = "https://cdn.usefathom.com/script.js"
+    #   siteId = "YOUR-SITE-ID"
+
+# French-specific parameters
+[languages.fr.params]
+  description = "Portfolio : Démonstration de projets, compétences techniques et résolution de problèmes concrets"
+  projectsIntro = "Projets sélectionnés à afficher."
+  blogIntro = ""
+
+  [languages.fr.params.home]
+    projectsTitle = "Projets Sélectionnés"
+    blogTitle = "Derniers Articles"
+    techMarqueeLabel = "Expérience en"
+
+  [languages.fr.params.hero]
+    badge = "Développeur Web | Python | Analyse de Données"
+    title = "Bonjour, je suis Yannick."
+    role = "Création d'applications web et transformation des données en informations exploitables"
+    location = "Paris Île-de-France, France"
+    available = true
+    availableLabel = "Disponible"
+    nowLabel = "Faits Rapides"
+    nowIntro = "En ce moment, je travaille principalement sur :"
+    now = [
+      "Gestion du processus évolutif de création, publication et gestion d'API",
+      "Construction et gestion de CoverLetterAI, un SaaS de lettres de motivation alimenté par l'IA",
+      "Documentation de mes projets et travaux techniques"
+    ]
+
+    [languages.fr.params.hero.primary]
+      label = "Voir les Projets"
+      href = "/projects/"
+
+    [languages.fr.params.hero.secondary]
+      label = "Lire le Blog"
+      href = "/blog/"
+
+  [languages.fr.params.about.alt]
+    [[languages.fr.params.about.alt.stats]]
+      value = "8+"
+      label = "Années de Code"
+
+    [[languages.fr.params.about.alt.stats]]
+      value = "20+"
+      label = "Projets"
+
+    [[languages.fr.params.about.alt.stats]]
+      value = "∞"
+      label = "Heures Passées"
+
+# Navigation Menu - English
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+    identifier = "home"
+    [languages.en.menu.main.params]
+      icon = "lucide-home"
+
+  [[languages.en.menu.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 2
+    identifier = "about"
+    [languages.en.menu.main.params]
+      icon = "lucide-user"
+
+  [[languages.en.menu.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 3
+    identifier = "projects"
+    [languages.en.menu.main.params]
+      icon = "lucide-folder-open"
+
+  [[languages.en.menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 4
+    identifier = "blog"
+    [languages.en.menu.main.params]
+      icon = "lucide-sticky-note"
+
+# Navigation Menu - French
+[languages.fr.menu]
+  [[languages.fr.menu.main]]
+    name = "Accueil"
+    pageRef = "/"
+    weight = 1
+    identifier = "home"
+    [languages.fr.menu.main.params]
+      icon = "lucide-home"
+
+  [[languages.fr.menu.main]]
+    name = "À propos"
+    pageRef = "/about"
+    weight = 2
+    identifier = "about"
+    [languages.fr.menu.main.params]
+      icon = "lucide-user"
+
+  [[languages.fr.menu.main]]
+    name = "Projets"
+    pageRef = "/projects"
+    weight = 3
+    identifier = "projects"
+    [languages.fr.menu.main.params]
+      icon = "lucide-folder-open"
+
+  [[languages.fr.menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 4
+    identifier = "blog"
+    [languages.fr.menu.main.params]
+      icon = "lucide-sticky-note"
+
+# Markup Configuration
+[markup]
+  # Table of Contents
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+  # Goldmark Renderer (Markdown)
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Privacy Configuration
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true

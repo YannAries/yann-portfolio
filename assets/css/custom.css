@@ -1,0 +1,575 @@
+/* ==========================================================================
+   CUSTOM.CSS - Geek Theme Overrides
+   Colors, fonts, effects - NO responsive rules (those are in responsive.css)
+   
+   CHANGES FROM ORIGINAL:
+   - NEW FILE (didn't exist before)
+   - Purple (#a855f7) → Cyan (#06b6d4) accent colors
+   - Added Inter font (body) + JetBrains Mono (code)
+   - Added grid background pattern
+   - Added scanline overlay
+   - Added terminal styling ($ prompt, cursor blink)
+   - Added glitch effects on cards
+   - Added ASCII dividers
+   - Added hex timestamps (0x prefix)
+   - Enhanced code blocks
+   - Added navigation underlines
+   - Custom scrollbar
+   ========================================================================== */
+
+/* Color & Typography Variables */
+:root {
+    --color-bg: #fafafa !important;
+    --color-surface: #ffffff !important;
+    --color-text: #0f172a !important;
+    --color-text-muted: #64748b !important;
+    --color-border: #e2e8f0 !important;
+    --color-accent: #06b6d4 !important;
+    --color-accent-secondary: #0891b2 !important;
+    --color-accent-light: #67e8f9 !important;
+
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace !important;
+    --font-size-base: 17px;
+    --line-height-base: 1.6;
+    --letter-spacing: -0.01em;
+}
+
+html[data-theme="dark"] {
+    --color-bg: #0a0a0a !important;
+    --color-surface: #121212 !important;
+    --color-text: #f1f5f9 !important;
+    --color-text-muted: #94a3b8 !important;
+    --color-border: #1e293b !important;
+    --color-accent: #22d3ee !important;
+    --color-accent-secondary: #06b6d4 !important;
+    --color-accent-light: #67e8f9 !important;
+}
+
+/* Base Typography */
+body {
+    font-family: var(--font-sans) !important;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing);
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-family: var(--font-mono) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+/* Grid Background Pattern (Dark Mode) */
+html[data-theme="dark"] body {
+    background:
+        linear-gradient(90deg, rgba(34, 211, 238, 0.02) 1px, transparent 1px),
+        linear-gradient(rgba(34, 211, 238, 0.02) 1px, transparent 1px),
+        radial-gradient(ellipse at top, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+        var(--color-bg);
+    background-size: 60px 60px, 60px 60px, 100% 100%;
+    background-position: 0 0, 0 0, center top;
+}
+
+/* Subtle Scanline Effect */
+html[data-theme="dark"]::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+}
+
+/* Terminal Prompt on Hero */
+.hero-badge::before {
+    content: '$ ';
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    opacity: 0.8;
+}
+
+/* Cursor Blink on Main Title */
+.hero-heading::after {
+    content: '▊';
+    color: var(--color-accent);
+    animation: cursor-blink 1.2s step-end infinite;
+    margin-left: 0.25rem;
+}
+
+@keyframes cursor-blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Hero Section Improvements */
+.hero-section {
+    max-width: 680px;
+}
+
+.hero-badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hero-heading {
+    margin: 1.5rem 0 0.75rem 0;
+    line-height: 1.1;
+}
+
+.hero-role {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+}
+
+.hero-summary {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* Code-style Section Headers */
+.heading-section::before,
+h2.section-title::before {
+    content: '// ';
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* Enhanced Card Hover - Glitch Effect */
+.card-home--project {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: none !important;
+}
+
+.card-home--project:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3) !important;
+  transform: translateY(-4px) !important;
+  animation: none !important;
+}
+
+@keyframes card-glitch {
+
+    0%,
+    100% {
+        transform: translateY(-4px) translateX(3px);
+    }
+
+    25% {
+        transform: translateY(-4px) translateX(5px);
+    }
+
+    75% {
+        transform: translateY(-4px) translateX(1px);
+    }
+}
+
+.card-home--project:hover h3 {
+  animation: none !important;
+}
+
+@keyframes text-glitch {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 1px);
+    }
+
+    40% {
+        transform: translate(2px, -1px);
+    }
+
+    60% {
+        transform: translate(-1px, 2px);
+    }
+
+    80% {
+        transform: translate(1px, -2px);
+    }
+}
+
+/* Cyan Glow on Project Cards */
+.card-home--project:hover {
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        16px 0 38px rgba(6, 182, 212, 0.45),
+        0 0 20px rgba(6, 182, 212, 0.1);
+}
+
+html[data-theme="dark"] .card-home--project:hover {
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        16px 0 38px rgba(34, 211, 238, 0.5),
+        0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+[data-theme="light"] .card-home--project:hover {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25) !important;
+}
+
+/* ASCII Dividers */
+.section-stack>div+div::before {
+    content: '// ────────────────────────────────────────────────';
+    display: block;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    opacity: 0.2;
+    font-size: 0.75rem;
+    margin: 3rem 0 2rem 0;
+    letter-spacing: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Hex-style Timestamps */
+.post-date::before,
+.card-home-header time::before {
+    content: '0x';
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    margin-right: 0.25rem;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+/* Code Block Enhancements */
+.markdown-body pre {
+    border-radius: 12px !important;
+    position: relative;
+    border: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+.markdown-body pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-accent-light) 50%,
+            transparent);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Terminal-style Code Block Header */
+.markdown-body pre::after {
+    content: '●●●';
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    color: var(--color-accent);
+    font-size: 0.6rem;
+    opacity: 0.3;
+    letter-spacing: 0.25rem;
+}
+
+/* Navigation Link Underline */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Tech Stack Icons - Glow Effect */
+.tech-stack-icon,
+.devicon {
+    transition: all 0.3s ease;
+}
+
+.tech-stack-icon:hover,
+.devicon:hover {
+    filter: drop-shadow(0 0 8px var(--color-accent));
+    transform: translateY(-2px);
+}
+
+/* Link Hover - Neon Underline */
+a:not(.card-home-body):not(.nav-link):hover {
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-accent);
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.3);
+}
+
+/* Selection Color */
+::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    text-shadow: none;
+}
+
+/* Focus Ring */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Button Enhancements */
+.btn-primary,
+.card-cta-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before,
+.card-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before,
+.card-cta-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Footer Glow */
+.footer-shell {
+    border-top: 1px solid rgba(34, 211, 238, 0.1);
+    box-shadow: 0 -1px 20px rgba(34, 211, 238, 0.05);
+}
+
+/* Scrollbar Styling (Webkit) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 6px;
+    border: 3px solid var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-light);
+}
+
+/* Loading Animation for Images */
+img {
+    animation: fade-in 0.4s ease-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* ============================================
+   ICON STYLING (Simple Icons + Inline SVG)
+   ============================================ */
+
+/* Inline Lucide SVG icons */
+.lucide-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+/* Simple Icons font sizing */
+.si {
+  font-size: inherit;
+}
+
+/* ============================================
+   CENTERED FOOTER - RESPONSIVE & NO MOVEMENT
+   ============================================ */
+
+.footer-custom-centered {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.5rem;
+  text-align: center;
+  width: 100%;
+  padding-top: 3rem;
+}
+
+.footer-social-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem;
+  width: 100%;
+}
+
+.footer-link {
+  transition: color 0.2s ease !important;
+  transform: none !important;
+}
+
+.footer-link:hover {
+  transform: none !important;
+}
+
+.footer-custom-text {
+  text-align: center !important;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-built-with {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.5rem;
+}
+
+.footer-custom-divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem auto;
+}
+
+[data-theme="dark"] .footer-custom-divider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .footer-custom-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .footer-social-row {
+    gap: 1.5rem;
+  }
+  
+  .footer-custom-centered {
+    padding-top: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-social-row {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .footer-custom-divider {
+    max-width: 100%;
+  }
+  
+  .footer-custom-centered {
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-social-row {
+    gap: 0.75rem;
+  }
+  
+  .footer-custom-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================
+   AVATAR SIZE FIX
+   ============================================ */
+
+.hero-avatar,
+.hero-section img[src*="avatar"],
+.hero-meta img {
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}

@@ -1,0 +1,15 @@
+{{ if hugo.IsMultilingual }}
+<div class="language-switcher">
+  {{ range .Translations }}
+    <a 
+      href="{{ .Permalink }}" 
+      lang="{{ .Language.Lang }}"
+      class="nav-link link-underline flex items-center gap-1"
+      title="{{ .Language.LanguageName }}"
+    >
+      <i class="fa-solid fa-language text-[0.75rem]"></i>
+      <span>{{ .Language.LanguageName }}</span>
+    </a>
+  {{ end }}
+</div>
+{{ end }}

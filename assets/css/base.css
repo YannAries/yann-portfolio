@@ -1,0 +1,99 @@
+/* ==========================================================================
+   BASE STYLES - CUSTOM OVERRIDES
+   ========================================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  /* LIGHT THEME */
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-accent: #06b6d4;
+  --color-accent-secondary: #0891b2;
+  --color-accent-light: #67e8f9;
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  --font-size-base: 17px;
+  --line-height-base: 1.6;
+  --letter-spacing: -0.01em;
+}
+
+html[data-theme="dark"] {
+  /* DARK THEME */
+  --color-bg: #0a0a0a;
+  --color-surface: #121212;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border: #1e293b;
+  --color-accent: #22d3ee;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-light: #67e8f9;
+}
+
+/* Base Styles */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing);
+}
+
+/* Gradient background for dark theme */
+html[data-theme="dark"] body {
+  background: radial-gradient(ellipse at top, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
+              var(--color-bg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-light);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+html[data-theme="dark"] ::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

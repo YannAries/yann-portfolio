@@ -1,0 +1,551 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - All Responsive Breakpoints
+   
+   CHANGES FROM ORIGINAL:
+   - ADDED: Geek theme responsive rules (lines 10-208)
+   - KEPT: All original theme responsive rules (lines 210-end)
+   - ADDED: Accessibility rules (reduced motion, print)
+   
+   NEW BREAKPOINTS FOR GEEK THEME:
+   - ≤1024px: Medium adjustments
+   - ≤768px: Mobile optimizations  
+   - ≤480px: Small mobile, minimal effects
+   - ≥1440px: Large desktop
+   ========================================================================== */
+
+/* ==========================================================================
+   GEEK THEME RESPONSIVE ADDITIONS
+   ========================================================================== */
+
+/* Tablet and Below (≤1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-base: 16px;
+  }
+
+  .hero-section {
+    max-width: 100%;
+  }
+
+  .hero-role {
+    font-size: 1.15rem;
+  }
+
+  .hero-summary {
+    font-size: 1rem;
+  }
+
+  .hero-meta {
+    gap: 1.5rem;
+  }
+
+  html[data-theme="dark"] body {
+    background-size: 50px 50px, 50px 50px, 100% 100%;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 15px;
+  }
+
+  /* Reduce grid density */
+  html[data-theme="dark"] body {
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+  }
+
+  /* Reduce scanline intensity */
+  html[data-theme="dark"]::after {
+    opacity: 0.3;
+  }
+
+  /* Hero adjustments */
+  .hero-heading {
+    font-size: 2rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .hero-role {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-summary {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions a,
+  .hero-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Shorter ASCII dividers */
+  .section-stack>div+div::before {
+    content: '// ──────────────────────────';
+  }
+
+  /* Reduce glitch intensity */
+  @keyframes card-glitch {
+
+    0%,
+    100% {
+      transform: translateY(-3px) translateX(2px);
+    }
+
+    25% {
+      transform: translateY(-3px) translateX(3px);
+    }
+
+    75% {
+      transform: translateY(-3px) translateX(1px);
+    }
+  }
+
+  @keyframes text-glitch {
+
+    0%,
+    100% {
+      transform: translate(0);
+    }
+
+    50% {
+      transform: translate(-1px, 1px);
+    }
+  }
+
+  /* Reduce card glow */
+  .card-home--project:hover {
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.6),
+      8px 0 20px rgba(6, 182, 212, 0.3);
+  }
+
+  html[data-theme="dark"] .card-home--project:hover {
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.6),
+      8px 0 20px rgba(34, 211, 238, 0.4);
+  }
+
+  /* Navigation spacing */
+  .nav-link::after {
+    bottom: -2px;
+    height: 1.5px;
+  }
+
+  /* Reduce scrollbar size */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 14px;
+  }
+
+  /* Hero */
+  .hero-heading {
+    font-size: 1.75rem;
+  }
+
+  .hero-heading::after {
+    display: none;
+    /* Remove cursor on very small screens */
+  }
+
+  .hero-role {
+    font-size: 0.95rem;
+  }
+
+  .hero-summary {
+    font-size: 0.9rem;
+  }
+
+  /* Very short dividers */
+  .section-stack>div+div::before {
+    content: '// ────────────';
+  }
+
+  /* Minimal grid */
+  html[data-theme="dark"] body {
+    background:
+      radial-gradient(ellipse at top, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+      var(--color-bg);
+  }
+
+  /* No scanlines on very small screens */
+  html[data-theme="dark"]::after {
+    display: none;
+  }
+
+  /* Disable some animations for performance */
+  .card-home--project:hover {
+    animation: none;
+    transform: translateY(-2px);
+  }
+
+  .card-home--project:hover h3 {
+    animation: none;
+  }
+
+  /* Simplify button effects */
+  .btn-primary::before,
+  .card-cta-btn::before {
+    display: none;
+  }
+}
+
+/* Large Desktop (≥1440px) */
+@media (min-width: 1440px) {
+  :root {
+    --font-size-base: 18px;
+  }
+
+  .hero-section {
+    max-width: 720px;
+  }
+
+  .hero-heading {
+    font-size: 3rem;
+  }
+
+  .hero-role {
+    font-size: 1.35rem;
+  }
+
+  html[data-theme="dark"] body {
+    background-size: 70px 70px, 70px 70px, 100% 100%;
+  }
+}
+
+/* ==========================================================================
+   ORIGINAL THEME RESPONSIVE RULES (KEPT INTACT)
+   ========================================================================== */
+
+/* Mobile - Small screens (up to 640px) */
+@media (max-width: 640px) {
+  .card-pad {
+    padding: 1.25rem;
+  }
+
+  .layout-page {
+    padding-inline: 1rem;
+    padding-block: 1.5rem;
+  }
+
+  .layout-page-tight {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+
+  /* Markdown body */
+  .markdown-body {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  /* Headings - scale down for mobile */
+  .markdown-body h1 {
+    font-size: 1.75rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .markdown-body h4 {
+    font-size: 1rem;
+  }
+
+  .markdown-body h5,
+  .markdown-body h6 {
+    font-size: 0.9rem;
+  }
+
+  /* Heading anchors - adjust for smaller screens */
+  .markdown-body .md-heading-anchor::before {
+    left: -1rem;
+    font-size: 0.85em;
+  }
+
+  /* Blockquotes */
+  .markdown-body blockquote,
+  .markdown-body .md-blockquote {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    border-left-width: 3px;
+  }
+
+  .markdown-body blockquote::before,
+  .markdown-body .md-blockquote::before {
+    font-size: 2rem;
+    left: 0.5rem;
+    top: 0.25rem;
+  }
+
+  /* Alerts */
+  .markdown-body .md-alert {
+    padding: 0.85rem 1rem 0.85rem 2.5rem;
+  }
+
+  .markdown-body .md-alert::before {
+    left: 0.75rem;
+    top: 0.95rem;
+    font-size: 0.95rem;
+  }
+
+  /* Lists */
+  .markdown-body ul,
+  .markdown-body ol {
+    padding-left: 1.25rem;
+  }
+
+  /* Code blocks */
+  .markdown-body pre {
+    margin: 1rem -1rem;
+    border-radius: 0.5rem;
+  }
+
+  .markdown-body pre code {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .mb-codeblock {
+    margin: 1.25rem -1rem;
+    border-radius: 0.5rem;
+  }
+
+  .mb-codeblock-content pre {
+    padding: 1rem;
+  }
+
+  .mb-codeblock-content pre code {
+    font-size: 0.8rem;
+  }
+
+  /* Inline code */
+  .markdown-body :not(pre)>code {
+    font-size: 0.85em;
+    padding: 0.1rem 0.35rem;
+  }
+
+  /* Tables - full bleed on mobile */
+  .markdown-body table {
+    font-size: 0.85rem;
+  }
+
+  .markdown-body th,
+  .markdown-body td {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .markdown-body .table-wrap {
+    margin: 1.25rem -1rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Images */
+  .markdown-body img,
+  .markdown-body .md-image {
+    margin: 1.25rem 0;
+  }
+
+  .markdown-body .md-image a {
+    border-radius: 0.5rem;
+  }
+
+  .markdown-body .md-image a::after {
+    font-size: 2rem;
+  }
+
+  .markdown-body .md-image figcaption {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Page heading */
+  .heading-page {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+  }
+
+  /* Article header */
+  .article-main header {
+    padding: 0;
+  }
+
+  /* TOC on mobile */
+  .toc-wrapper {
+    border-radius: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .toc-nav {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet - Medium screens (641px to 1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .article-layout {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .article-main {
+    max-width: -webkit-fill-available;
+  }
+
+  .layout-page {
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .markdown-body {
+    font-size: 0.93rem;
+  }
+
+  .markdown-body h1 {
+    font-size: 1.85rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.4rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Larger screens - Adjust max-widths */
+@media (min-width: 1536px) {
+  .article-layout {
+    padding-inline: 2rem;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .markdown-body {
+    font-size: 1rem;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Increase tap targets for touch */
+  .toc-nav a {
+    padding: 0.5rem 0.65rem;
+    margin: 0.15rem 0;
+  }
+
+  .toc-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .mb-action-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  /* Remove hover effects on touch devices */
+  .markdown-body li:hover {
+    background: none;
+  }
+
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .toc-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  .layout-page {
+    padding-block: 1rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY (ADDED)
+   ========================================================================== */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-heading::after {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+
+  html[data-theme="dark"]::after,
+  .hero-heading::after,
+  .nav-link::after,
+  .section-stack>div+div::before {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .card-home--project,
+  .card-home--post {
+    break-inside: avoid;
+  }
+}
+
+@layer base {
+  .prose {
+    color: var(--color-text);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+
+  .prose strong {
+    color: var(--color-text);
+  }
+}

@@ -1,0 +1,195 @@
+# Navigation
+[nav_toggle]
+other = "Basculer la navigation"
+
+[open_navigation]
+other = "Ouvrir la navigation"
+
+# Search
+[search_posts]
+other = "Rechercher des articles..."
+
+[close_search]
+other = "Fermer la recherche"
+
+[start_searching]
+other = "Commencer la recherche"
+
+[search_keywords]
+other = "Entrez des mots-clés pour rechercher des articles."
+
+[navigate]
+other = "Naviguer"
+
+[select]
+other = "Sélectionner"
+
+[close]
+other = "Fermer"
+
+[shortcut]
+other = "Raccourci"
+
+# Footer
+[all_rights_reserved]
+other = "Tous droits réservés."
+
+[built_with]
+other = "Conçu avec"
+
+# Content sections
+[latest_posts]
+other = "Derniers Articles"
+
+[featured_projects]
+other = "Projets en Vedette"
+
+[read_more]
+other = "Lire la suite"
+
+[view_all_posts]
+other = "Voir tous les articles"
+
+[view_all_projects]
+other = "Voir tous les projets"
+
+[no_posts]
+other = "Aucun article trouvé."
+
+[no_projects]
+other = "Aucun projet trouvé."
+
+# Post/Project metadata
+[posted_on]
+other = "Publié le"
+
+[reading_time]
+other = "{{ .Count }} min de lecture"
+
+[tags]
+other = "Étiquettes"
+
+[categories]
+other = "Catégories"
+
+# Buttons and CTAs
+[view_project]
+other = "Voir le Projet"
+
+[view_demo]
+other = "Voir la Démo"
+
+[view_source]
+other = "Voir la Source"
+
+[github]
+other = "GitHub"
+
+[demo]
+other = "Démo"
+
+# Table of Contents
+[table_of_contents]
+other = "Table des Matières"
+
+[on_this_page]
+other = "Sur cette page"
+
+# Code blocks
+[copy]
+other = "Copier"
+
+[copied]
+other = "Copié"
+
+[collapse]
+other = "Réduire"
+
+[expand]
+other = "Développer"
+
+# Date formats
+[date_format]
+other = "2 January 2006"
+
+[date_format_short]
+other = "2 Jan 2006"
+
+# Pagination
+[previous]
+other = "Précédent"
+
+[next]
+other = "Suivant"
+
+[page]
+other = "Page"
+
+[of]
+other = "sur"
+
+# Hero section
+[available_for_work]
+other = "Disponible pour travailler"
+
+[currently_focused]
+other = "Actuellement concentré sur"
+
+# 404 Page
+[404_title]
+other = "Page Non Trouvée"
+
+[404_message]
+other = "Désolé, nous n'avons pas trouvé la page que vous recherchez."
+
+[back_to_home]
+other = "Retour à l'Accueil"
+
+# Accessibility
+[skip_to_content]
+other = "Aller au contenu"
+
+[main_menu]
+other = "Menu principal"
+
+[close_menu]
+other = "Fermer le menu"
+
+# Social
+[follow_me]
+other = "Suivez-moi"
+
+[contact]
+other = "Contact"
+
+# Theme
+[toggle_theme]
+other = "Changer de thème"
+
+[dark_mode]
+other = "Mode sombre"
+
+[light_mode]
+other = "Mode clair"
+
+[system_theme]
+other = "Thème système"
+
+# Language
+[language]
+other = "Langue"
+
+[change_language]
+other = "Changer de langue"
+
+[what_i_work_with]
+other = "Technologies Utilisées"
+
+[featured]
+other = "En Vedette"
+
+[blog_subtitle]
+other = "Notes sur l'ingénierie, le design et la création d'outils réfléchis."
+
+[min_read]
+other = "min de lecture"
