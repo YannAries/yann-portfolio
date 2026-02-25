@@ -1,4 +1,5 @@
-baseURL = 'https://minimal-black-demo.netlify.app'
+baseURL = 'https://yannaries.github.io/yann-portfolio/'
+title = 'Yannick portfolio'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 theme = "minimal-black"
