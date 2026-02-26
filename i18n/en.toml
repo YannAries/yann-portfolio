@@ -39,10 +39,10 @@ other = "Built with"
 
 # Content sections
 [latest_posts]
-other = "Latest Posts"
+other = "Latest posts"
 
 [featured_projects]
-other = "Featured Projects"
+other = "Featured projects"
 
 [read_more]
 other = "Read more"
@@ -74,13 +74,13 @@ other = "Categories"
 
 # Buttons and CTAs
 [view_project]
-other = "View Project"
+other = "View project"
 
 [view_demo]
-other = "View Demo"
+other = "View demo"
 
 [view_source]
-other = "View Source"
+other = "View source"
 
 [github]
 other = "GitHub"
@@ -90,7 +90,7 @@ other = "Demo"
 
 # Table of Contents
 [table_of_contents]
-other = "Table of Contents"
+other = "Table of contents"
 
 [on_this_page]
 other = "On this page"
@@ -137,13 +137,43 @@ other = "Currently focused on"
 
 # 404 Page
 [404_title]
-other = "Page Not Found"
+other = "Oops! Lost in the Digital Void"
 
-[404_message]
-other = "Sorry, we couldn't find the page you're looking for."
+[404_description]
+other = "This page went on vacation and forgot to leave a forwarding address. It's probably sipping margaritas on a beach somewhere... or it never existed in the first place."
 
-[back_to_home]
-other = "Back to Home"
+[404_hint]
+other = "Try searching for what you need, or return to the homepage."
+
+[search_site]
+other = "Search Site"
+
+[go_home]
+other = "Go Home"
+
+[you_might_be_interested]
+other = "You might be interested in:"
+
+[blog]
+other = "Blog"
+
+[read_latest_articles]
+other = "Read latest articles"
+
+[projects]
+other = "Projects"
+
+[explore_my_work]
+other = "Explore my work"
+
+[about]
+other = "About"
+
+[learn_more_about_me]
+other = "Learn more about me"
+
+[recent_content]
+other = "Recent Content"
 
 # Accessibility
 [skip_to_content]
@@ -182,8 +212,9 @@ other = "Language"
 [change_language]
 other = "Change language"
 
+# Additional
 [what_i_work_with]
-other = "What I Work With"
+other = "What I work with"
 
 [featured]
 other = "Featured"

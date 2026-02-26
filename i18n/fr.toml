@@ -39,10 +39,10 @@ other = "Conçu avec"
 
 # Content sections
 [latest_posts]
-other = "Derniers Articles"
+other = "Derniers articles"
 
 [featured_projects]
-other = "Projets en Vedette"
+other = "Projets en vedette"
 
 [read_more]
 other = "Lire la suite"
@@ -74,13 +74,13 @@ other = "Catégories"
 
 # Buttons and CTAs
 [view_project]
-other = "Voir le Projet"
+other = "Voir le projet"
 
 [view_demo]
-other = "Voir la Démo"
+other = "Voir la démo"
 
 [view_source]
-other = "Voir la Source"
+other = "Voir la source"
 
 [github]
 other = "GitHub"
@@ -90,7 +90,7 @@ other = "Démo"
 
 # Table of Contents
 [table_of_contents]
-other = "Table des Matières"
+other = "Table des matières"
 
 [on_this_page]
 other = "Sur cette page"
@@ -135,15 +135,45 @@ other = "Disponible pour travailler"
 [currently_focused]
 other = "Actuellement concentré sur"
 
-# 404 Page
+# Page 404
 [404_title]
-other = "Page Non Trouvée"
+other = "Oups! Perdu dans le Vide Numérique"
 
-[404_message]
-other = "Désolé, nous n'avons pas trouvé la page que vous recherchez."
+[404_description]
+other = "Cette page est partie en vacances et a oublié de laisser une adresse de redirection. Elle sirote probablement des margaritas sur une plage quelque part... ou elle n'a jamais existé."
 
-[back_to_home]
-other = "Retour à l'Accueil"
+[404_hint]
+other = "Essayez de rechercher ce dont vous avez besoin, ou retournez à l'accueil."
+
+[search_site]
+other = "Rechercher"
+
+[go_home]
+other = "Accueil"
+
+[you_might_be_interested]
+other = "Vous pourriez être intéressé par :"
+
+[blog]
+other = "Blog"
+
+[read_latest_articles]
+other = "Lire les derniers articles"
+
+[projects]
+other = "Projets"
+
+[explore_my_work]
+other = "Explorer mon travail"
+
+[about]
+other = "À propos"
+
+[learn_more_about_me]
+other = "En savoir plus sur moi"
+
+[recent_content]
+other = "Contenu récent"
 
 # Accessibility
 [skip_to_content]
@@ -182,11 +212,12 @@ other = "Langue"
 [change_language]
 other = "Changer de langue"
 
+# Additional
 [what_i_work_with]
-other = "Technologies Utilisées"
+other = "Technologies utilisées"
 
 [featured]
-other = "En Vedette"
+other = "En vedette"
 
 [blog_subtitle]
 other = "Notes sur l'ingénierie, le design et la création d'outils réfléchis."
