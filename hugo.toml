@@ -229,7 +229,7 @@ theme = "minimal-black"
 
   [[params.social]]
     label = "Email"
-    url = "dev-portfolio.yvkkx@aleeas.com"
+    url = "mailto:dev-portfolio.yvkkx@aleeas.com"
     icon = "si si-protonmail"
 
   # Analytics Configuration
