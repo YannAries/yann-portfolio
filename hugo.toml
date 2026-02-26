@@ -195,7 +195,7 @@ theme = "minimal-black"
   [params.hero]
     badge = "Web Developer | Python | Data Analytics"
     title = "Hi, I'm Yannick."
-    role = "Building web applications and turning data into insights"
+    role = "I like building web applications and turning data into insights"
     location = "Paris Île-de-France, France"
     available = true
     availableLabel = "Available for work"
@@ -219,17 +219,17 @@ theme = "minimal-black"
   # Social Links
   [[params.social]]
     label = "GitHub"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/YannAries/"
     icon = "si si-github"
 
   [[params.social]]
     label = "LinkedIn"
-    url = "https://www.linkedin.com/in/jimchristopoulos-542512221/"
+    url = "https://www.linkedin.com/in/yannick-guionfirmin/"
     icon = "lucide-network"
 
   [[params.social]]
     label = "Email"
-    url = "mailto:you@example.com"
+    url = "dev-portfolio.yvkkx@aleeas.com"
     icon = "si si-protonmail"
 
   # Analytics Configuration
@@ -244,10 +244,10 @@ theme = "minimal-black"
     #   scriptUrl = "https://plausible.io/js/script.js"
 
     # Umami Analytics (self-hosted option)
-    # [params.analytics.umami]
-    #   enabled = true
-    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
-    #   websiteId = "your-website-id"
+      [params.analytics.umami]
+        enabled = true
+        scriptUrl = "https://cloud.umami.is/script.js"
+        websiteId = "36b0781b-9a3f-4cf0-b8d0-fff22e9992c7"
 
     # Fathom Analytics
     # [params.analytics.fathom]
@@ -269,7 +269,7 @@ theme = "minimal-black"
   [languages.fr.params.hero]
     badge = "Développeur Web | Python | Analyse de Données"
     title = "Bonjour, je suis Yannick."
-    role = "Création d'applications web et transformation des données en informations exploitables"
+    role = "J'aime créer des applications web et transformer des données en informations exploitables"
     location = "Paris Île-de-France, France"
     available = true
     availableLabel = "Disponible"
