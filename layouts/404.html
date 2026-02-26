@@ -6,39 +6,34 @@
             <div class="error-code">4😵4</div>
 
             <!-- Error Message -->
-            <h1 class="error-title">Oops! Lost in the Digital Void</h1>
-            <p class="error-description">
-                This page went on vacation and forgot to leave a forwarding address. It's probably sipping margaritas on
-                a beach somewhere... or it never existed in the first place.
-            </p>
+            <h1 class="error-title">{{ i18n "404_title" }}</h1>
+            <p class="error-description">{{ i18n "404_description" }}</p>
 
             <!-- Search Suggestion -->
             <div class="error-search">
-                <p class="error-hint">
-                    Try searching for what you need, or return to the homepage.
-                </p>
+                <p class="error-hint">{{ i18n "404_hint" }}</p>
                 <div class="error-actions">
-                    <button onclick="window.MinimalSearch.open()" class="btn-primary" aria-label="Search site">
+                    <button onclick="window.MinimalSearch.open()" class="btn-primary" aria-label="{{ i18n "search_site" }}">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Search Site</span>
+                        <span>{{ i18n "search_site" }}</span>
                     </button>
-                    <a href="/" class="btn-ghost">
+                    <a href="{{ "/" | relLangURL }}" class="btn-ghost">
                         <i class="fa-solid fa-house"></i>
-                        <span>Go Home</span>
+                        <span>{{ i18n "go_home" }}</span>
                     </a>
                 </div>
             </div>
 
             <!-- Helpful Links -->
             <div class="error-links">
-                <h2 class="error-links-title">You might be interested in:</h2>
+                <h2 class="error-links-title">{{ i18n "you_might_be_interested" }}</h2>
                 <div class="error-links-grid">
                     {{ with .Site.GetPage "/blog" }}
                     <a href="{{ .Permalink }}" class="error-link-card">
                         <i class="fa-regular fa-note-sticky"></i>
                         <div>
-                            <strong>Blog</strong>
-                            <span>Read latest articles</span>
+                            <strong>{{ i18n "blog" }}</strong>
+                            <span>{{ i18n "read_latest_articles" }}</span>
                         </div>
                     </a>
                     {{ end }}
@@ -47,8 +42,8 @@
                     <a href="{{ .Permalink }}" class="error-link-card">
                         <i class="fa-regular fa-folder-open"></i>
                         <div>
-                            <strong>Projects</strong>
-                            <span>Explore my work</span>
+                            <strong>{{ i18n "projects" }}</strong>
+                            <span>{{ i18n "explore_my_work" }}</span>
                         </div>
                     </a>
                     {{ end }}
@@ -57,8 +52,8 @@
                     <a href="{{ .Permalink }}" class="error-link-card">
                         <i class="fa-regular fa-user"></i>
                         <div>
-                            <strong>About</strong>
-                            <span>Learn more about me</span>
+                            <strong>{{ i18n "about" }}</strong>
+                            <span>{{ i18n "learn_more_about_me" }}</span>
                         </div>
                     </a>
                     {{ end }}
@@ -70,7 +65,7 @@
             {{ $recentPages = first 3 $recentPages }}
             {{ if $recentPages }}
             <div class="error-recent">
-                <h2 class="error-recent-title">Recent Content</h2>
+                <h2 class="error-recent-title">{{ i18n "recent_content" }}</h2>
                 <ul class="error-recent-list">
                     {{ range $recentPages }}
                     <li>
