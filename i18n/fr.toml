@@ -137,7 +137,7 @@ other = "Actuellement concentré sur"
 
 # Page 404
 [404_title]
-other = "Oups! Perdu dans le Vide Numérique"
+other = "Oups! Perdu dans le vide numérique"
 
 [404_description]
 other = "Cette page est partie en vacances et a oublié de laisser une adresse de redirection. Elle sirote probablement des margaritas sur une plage quelque part... ou elle n'a jamais existé."
@@ -224,3 +224,6 @@ other = "Notes sur l'ingénierie, le design et la création d'outils réfléchis
 
 [min_read]
 other = "min de lecture"
+
+[download_cv]
+other = "Télécharger CV"

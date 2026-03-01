@@ -420,3 +420,11 @@ theme = "minimal-black"
 [privacy]
   [privacy.youtube]
     privacyEnhanced = true
+
+[mediaTypes]
+  [mediaTypes."application/pdf"]
+    suffixes = ["pdf"]
+
+[outputFormats]
+  [outputFormats.PDF]
+    mediaType = "application/pdf"

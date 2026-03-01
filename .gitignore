@@ -3,9 +3,6 @@
 /resources/
 .hugo_build.lock
 
-# Theme (ignore original, keep customizations)
-/themes/
-
 # OS files
 .DS_Store
 Thumbs.db

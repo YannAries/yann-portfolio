@@ -137,7 +137,7 @@ other = "Currently focused on"
 
 # 404 Page
 [404_title]
-other = "Oops! Lost in the Digital Void"
+other = "Oops! Lost in the digital void"
 
 [404_description]
 other = "This page went on vacation and forgot to leave a forwarding address. It's probably sipping margaritas on a beach somewhere... or it never existed in the first place."
@@ -146,10 +146,10 @@ other = "This page went on vacation and forgot to leave a forwarding address. It
 other = "Try searching for what you need, or return to the homepage."
 
 [search_site]
-other = "Search Site"
+other = "Search site"
 
 [go_home]
-other = "Go Home"
+other = "Go home"
 
 [you_might_be_interested]
 other = "You might be interested in:"
@@ -224,3 +224,6 @@ other = "Notes on engineering, design, and building small, thoughtful tools."
 
 [min_read]
 other = "min read"
+
+[download_cv]
+other = "Download CV"
